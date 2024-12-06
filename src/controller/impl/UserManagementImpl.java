@@ -14,7 +14,19 @@ public class UserManagementImpl implements UserManagement {
     public UserManagementImpl() {
         userDAO = new UserDAO(); // Khởi tạo đối tượng UserDAO
     }
-
+    
+    public List<User> getAllUser() {
+    	List<User> result = null;
+		try {
+			result = userDAO.getAll();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+    	
+    }
+    
     @Override
     public boolean addUser(User user) {
         try {

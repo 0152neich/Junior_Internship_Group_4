@@ -13,7 +13,7 @@ public class Main {
         UserManagement userManagement = new UserManagementImpl();
 
         // Gọi phương thức showUser để hiển thị danh sách người dùng
-        User newUser = new User("123", "Nguyen Van A", "nguyenvana@gmail.com", "nguyenvana", "password123", "0123456789", Role.USER);
+        User newUser = new User("1234", "Nguyen Van b", "nguyenvanb@gmail.com", "nguyenvanb", "password123", "0123456789", Role.USER);
 
         // Gọi phương thức addUser để thêm người dùng mới
         boolean result = userManagement.addUser(newUser);

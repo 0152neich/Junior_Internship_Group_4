@@ -1,10 +1,11 @@
 package controller.impl;
 
 import controller.Authentic;
+import model.User;
 
 public class AuthenticImpl implements Authentic {
     @Override
-    public boolean logic() {
+    public boolean login(){
         return false;
     }
 
@@ -14,7 +15,7 @@ public class AuthenticImpl implements Authentic {
     }
 
     @Override
-    public boolean register() {
+    public boolean register(User u) {
         return false;
     }
 }
