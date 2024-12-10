@@ -84,5 +84,27 @@ public class UserManagementImpl implements UserManagement {
             return false; // Trả về false nếu gặp lỗi
         }
     }
+    public boolean checkEmailExists(String email) {
+    	try {
+			// Gọi phương thức checkEmailExists() của UserDAO để check email đã tồn tại chưa
+    		return userDAO.checkEmailExists(email);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+    }
+
+	@Override
+	public boolean checkUsernameExists(String username) {
+		try {
+			return userDAO.checkUsernameExists(username);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+	}
+    
 
 }

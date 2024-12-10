@@ -1,7 +1,8 @@
 package model;
 
 public class User {
-    private String id ;
+	private static long idCounter = 1;
+    private long id ;
     private String fullname ;
     private String email ;
     private String username ;
@@ -12,8 +13,8 @@ public class User {
     public User() {
     }
 
-    public User(String id, String fullname, String email, String username, String password, String phone, Role role) {
-        this.id = id;
+    public User(String fullname, String email, String username, String password, String phone, Role role) {
+        this.id = idCounter++;
         this.fullname = fullname;
         this.email = email;
         this.username = username;
@@ -22,11 +23,11 @@ public class User {
         this.role = role;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
