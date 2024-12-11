@@ -2,12 +2,10 @@ package controller;
 
 import model.Production;
 
-import java.util.ArrayList;
 
 public interface ProductManagement {
-    public boolean addProduct();
-    public boolean updateProduct();
-    public boolean deleteProduct();
-    public ArrayList<Production> searchProductByName();
+    public boolean addProduct(Production production);
+    public boolean updateProduct(Production production);
+    public boolean deleteProduct(String id);
     public boolean showProduct();
 }

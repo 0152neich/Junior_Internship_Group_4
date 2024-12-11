@@ -1,7 +1,10 @@
+import controller.ProductManagement;
 import controller.UserManagement;
+import controller.impl.ProductManagementImpl;
 import controller.impl.UserManagementImpl;
 import dao.UserDAO;
 import model.User;
+import model.Production;
 import model.Role;
 import java.sql.SQLException;
 
@@ -13,7 +16,7 @@ public class Main {
         UserManagement userManagement = new UserManagementImpl();
 
         // Gọi phương thức showUser để hiển thị danh sách người dùng
-        User newUser = new User("123", "Nguyen Van A", "nguyenvana@gmail.com", "nguyenvana", "password123", "0123456789", Role.USER);
+        User newUser = new User("126", "Nguyen Van C", "nguyenvanc@gmail.com", "nguyenvanc", "password126", "0123456789", Role.ADMIN);
 
         // Gọi phương thức addUser để thêm người dùng mới
         boolean result = userManagement.addUser(newUser);
@@ -23,5 +26,16 @@ public class Main {
         } else {
             System.out.println("Không thể them");
         }
+        
+//        ProductManagement productManagement = new ProductManagementImpl();
+//        Production production = new Production("3", "Iphone", 200000.0, 3, "Apple");
+//        
+//        boolean result = productManagement.addProduct(production);
+//        if (result) {
+//            System.out.println("them nguoi dùng thành công.");
+//        } else {
+//            System.out.println("Không thể them");
+//        }
+        
     }
 }

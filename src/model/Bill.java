@@ -8,7 +8,7 @@ public class Bill {
     private int amount;
     private Customer customer;
     private String maSanPham ;
-    private int quantity;
+    private int quantity;	
     private String maKhuyenMai ;
 
 
