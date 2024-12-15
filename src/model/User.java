@@ -1,20 +1,15 @@
 package model;
 
 public class User {
-	private static long idCounter = 1;
-    private long id ;
-    private String fullname ;
-    private String email ;
-    private String username ;
-    private String password ;
-    private String phone ;
-    private Role role ;
-
-    public User() {
-    }
+    private String id; // ID kiểu String
+    private String fullname;
+    private String email;
+    private String username;
+    private String password;
+    private String phone;
+    private Role role;
 
     public User(String fullname, String email, String username, String password, String phone, Role role) {
-        this.id = idCounter++;
         this.fullname = fullname;
         this.email = email;
         this.username = username;
@@ -23,11 +18,12 @@ public class User {
         this.role = role;
     }
 
-    public long getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,6 +41,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -69,26 +73,5 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", fullname='" + fullname + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", role=" + role +
-                '}';
     }
 }
