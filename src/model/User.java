@@ -1,19 +1,15 @@
 package model;
 
 public class User {
-    private String id ;
-    private String fullname ;
-    private String email ;
-    private String username ;
-    private String password ;
-    private String phone ;
-    private Role role ;
+    private String id; // ID kiểu String
+    private String fullname;
+    private String email;
+    private String username;
+    private String password;
+    private String phone;
+    private Role role;
 
-    public User() {
-    }
-
-    public User(String id, String fullname, String email, String username, String password, String phone, Role role) {
-        this.id = id;
+    public User(String fullname, String email, String username, String password, String phone, Role role) {
         this.fullname = fullname;
         this.email = email;
         this.username = username;
@@ -21,6 +17,7 @@ public class User {
         this.phone = phone;
         this.role = role;
     }
+
 
     public String getId() {
         return id;
@@ -46,6 +43,14 @@ public class User {
         this.email = email;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -68,26 +73,5 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", fullname='" + fullname + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", role=" + role +
-                '}';
     }
 }
