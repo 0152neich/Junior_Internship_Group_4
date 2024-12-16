@@ -19,7 +19,7 @@ public class UserDAO {
     public Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
-
+    
     // Phương thức sinh ID mới
     private String generateUserId() throws SQLException {
         String query = "SELECT COUNT(*) FROM USER"; // Đếm số lượng bản ghi
