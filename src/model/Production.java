@@ -6,8 +6,9 @@ public class Production {
     private Double price;
     private int quantity;
     private String brand;
-
+    	
     public Production() {
+    	
     }
 
     public Production(String id, String name, Double price, int quantity, String brand) {
