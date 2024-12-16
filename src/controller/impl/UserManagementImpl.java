@@ -14,19 +14,17 @@ public class UserManagementImpl implements UserManagement {
     public UserManagementImpl() {
         userDAO = new UserDAO(); // Khởi tạo đối tượng UserDAO
     }
-    
+
     public List<User> getAllUser() {
-    	List<User> result = null;
-		try {
-			result = userDAO.getAll();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return result;
-    	
+        List<User> result = null;
+        try {
+            result = userDAO.getAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
-    
+
     @Override
     public boolean addUser(User user) {
         try {
@@ -42,7 +40,6 @@ public class UserManagementImpl implements UserManagement {
     public boolean updateUser(User user) {
         try {
             // Gọi phương thức update() của UserDAO để cập nhật thông tin người dùng
-
             return userDAO.update(user);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,27 +81,25 @@ public class UserManagementImpl implements UserManagement {
             return false; // Trả về false nếu gặp lỗi
         }
     }
+
     public boolean checkEmailExists(String email) {
-    	try {
-			// Gọi phương thức checkEmailExists() của UserDAO để check email đã tồn tại chưa
-    		return userDAO.checkEmailExists(email);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-			return false;
-		}
+        try {
+            // Gọi phương thức checkEmailExists() của UserDAO để kiểm tra email đã tồn tại chưa
+            return userDAO.checkEmailExists(email);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
-	@Override
-	public boolean checkUsernameExists(String username) {
-		try {
-			return userDAO.checkUsernameExists(username);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-			return false;
-		}
-	}
-    
-
+    @Override
+    public boolean checkUsernameExists(String username) {
+        try {
+            // Gọi phương thức checkUsernameExists() của UserDAO để kiểm tra username đã tồn tại chưa
+            return userDAO.checkUsernameExists(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

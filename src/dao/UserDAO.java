@@ -9,12 +9,14 @@ import common.HashPassword;
 
 public class UserDAO {
 
-    private final String URL = "jdbc:mysql://localhost:3306/phone_shop?useSSL=false";
+    private final String URL = "jdbc:mysql://localhost:3306/phone_shop?autoReconnect=true&useSSL=false";
     private final String USER = "root";
-    private final String PASSWORD = "neihc5201";
+    private final String PASSWORD = "luongthaison";
 
+
+    
     // Kết nối đến cơ sở dữ liệu MySQL
-    private Connection connect() throws SQLException {
+    public Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
