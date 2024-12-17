@@ -14,6 +14,8 @@ public class Bill {
     // Constructor mặc định
     public Bill() {
     }
+    
+    
 
     // Constructor đầy đủ
     public Bill(String id, Date date, BigDecimal amount, String customer, int quantity, String userid) {

@@ -13,7 +13,7 @@ public class Promotion {
     public Promotion() {
     }
 
-    public Promotion(String idofpromotion, String idproduction, Date start, Date end, String condition, String description) {
+    public Promotion(String idofpromotion, Date start, Date end, String condition, String description) {
         this.idofpromotion = idofpromotion;
         this.idproduction = idproduction;
         this.start = start;

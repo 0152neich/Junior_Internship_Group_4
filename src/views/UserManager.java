@@ -20,7 +20,7 @@ import model.Role;
 import model.User;
 public class UserManager {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField idTextFied;
 	private JTextField nameTextField;
 	private JTextField emailTextField;
@@ -61,7 +61,7 @@ public class UserManager {
 		frame.setBounds(100, 100, 1135, 567);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+		frame.setLocationRelativeTo(null); // Hiển thị cửa sổ ở giữa màn hình
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(188, 188, 188));
 		panel.setBounds(25, 74, 273, 240);
@@ -189,7 +189,15 @@ public class UserManager {
 		JButton btnNewButton = new JButton("Quay lại");
 		btnNewButton.setBounds(1003, 8, 95, 29);
 		panel_2.add(btnNewButton);
-		
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				homePage window = new homePage();
+				window.frame.setVisible(true);
+				frame.dispose();
+				
+			}
+		});
 		tableUser = new JTable();
 		tableUser.setBounds(310, 74, 819, 417);
 		frame.getContentPane().add(tableUser);

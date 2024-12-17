@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import controller.UserManagement;
 import controller.impl.BillManagementImpl;
 import dao.UserDAO;
@@ -13,3 +14,5 @@ public class Main {
         BillManagementImpl billManager = new BillManagementImpl() ;
     }
 }
+=======
+>>>>>>> c31ab5d (Lưu các thay đổi local trước khi pull code mới)

@@ -21,7 +21,7 @@ import common.SendMail;
 
 public class SignUpView {
 
-    private JFrame frame;
+    JFrame frame;
     private PlaceholderTextField fullname;
     private PlaceholderTextField email;
     private PlaceholderTextField username;
@@ -63,7 +63,7 @@ public class SignUpView {
         frame.setBounds(100, 100, 450, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
-
+        frame.setLocationRelativeTo(null);
         JLabel lblSignUp = new JLabel("Đăng ký");
         lblSignUp.setHorizontalAlignment(SwingConstants.CENTER);
         lblSignUp.setFont(new Font("Tahoma", Font.PLAIN, 30));

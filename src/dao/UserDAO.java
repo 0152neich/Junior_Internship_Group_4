@@ -14,7 +14,7 @@ public class UserDAO {
     private final String PASSWORD = "neihc5201";
 
     // Kết nối đến cơ sở dữ liệu MySQL
-    private Connection connect() throws SQLException {
+    public Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 

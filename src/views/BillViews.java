@@ -25,7 +25,11 @@ import javax.swing.JComboBox;
 
 public class BillViews {
     
+//<<<<<<< HEAD
     private JFrame frame;
+//=======
+//    JFrame frame;
+//>>>>>>> c31ab5d (Lưu các thay đổi local trước khi pull code mới)
     private JTable table;
     private JComboBox typeComboBox;
     private JComboBox valueComboBox;
@@ -53,7 +57,18 @@ public class BillViews {
         frame.setBounds(100, 100, 1135, 567);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
+//<<<<<<< HEAD
 
+//=======
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        // Khi người dùng nhấn nút đóng, cửa sổ sẽ bị ẩn đi thay vì dừng tiến trình
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                frame.setVisible(false); // Ẩn cửa sổ thay vì dừng tiến trình
+            }
+        });
+//>>>>>>> c31ab5d (Lưu các thay đổi local trước khi pull code mới)
         JButton btnNewButton = new JButton("Lọc");
         btnNewButton.setBounds(330, 92, 55, 29);
         frame.getContentPane().add(btnNewButton);
@@ -94,9 +109,15 @@ public class BillViews {
         
         JButton BackButton = new JButton("Huỷ");
         BackButton.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        	}
-        });
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				homePage window = new homePage();
+				window.frame.setVisible(true);
+				frame.dispose();
+				
+			}
+		});
+//>>>>>>> c31ab5d (Lưu các thay đổi local trước khi pull code mới)
         BackButton.setBounds(1048, 6, 75, 29);
         panel.add(BackButton);
         
