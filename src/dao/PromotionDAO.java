@@ -1,6 +1,9 @@
 package dao;
 
 import java.sql.*;
+import java.util.*;
+import model.*;
+
 
 public class PromotionDAO {
 	
@@ -8,7 +11,6 @@ public class PromotionDAO {
     private final String USER = "root";
     private final String PASSWORD = "Wh0@m1?!";
     
-    @Override
     public List<Promotion> getAllPromotions() {
         List<Promotion> promotions = new ArrayList<>();
         String sql = "SELECT * FROM KHUYEN_MAI";
@@ -31,7 +33,6 @@ public class PromotionDAO {
         return promotions;
     }
 
-    @Override
     public boolean addPromotion(Promotion promotion) {
         String sql = "INSERT INTO KHUYEN_MAI (idofpromotion, start, end, dieukien, description) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -50,7 +51,6 @@ public class PromotionDAO {
         }
     }
 
-    @Override
     public boolean updatePromotion(Promotion promotion) {
         String sql = "UPDATE KHUYENMAI SET start = ?, end = ?, dieukien = ?, description = ? WHERE idofpromotion = ?";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -69,7 +69,6 @@ public class PromotionDAO {
         }
     }
 
-    @Override
     public boolean deletePromotion(String promotionId) {
         String sql = "DELETE FROM KHUYENMAI WHERE idofpromotion = ?";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -83,7 +82,6 @@ public class PromotionDAO {
         }
     }
 
-    @Override
     public Promotion findPromotionById(String promotionId) {
         String sql = "SELECT * FROM KHUYENMAI WHERE idofpromotion = ?";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);

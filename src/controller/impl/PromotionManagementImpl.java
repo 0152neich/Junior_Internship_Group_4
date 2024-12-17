@@ -1,43 +1,42 @@
 package controller.impl;
 
 import controller.PromotionManagement;
+import dao.PromotionDAO;
 import model.Promotion;
+import java.sql.SQLException;
+import java.util.*;
 
 public class PromotionManagementImpl implements PromotionManagement {
 	
 	PromotionDAO promotionDAO;
 	
-    public UserManagementImpl() {
+    public PromotionManagementImpl() {
         promotionDAO = new PromotionDAO(); // Khởi tạo đối tượng PromotionDAO
     }
 
-    public List<User> getAllUser() {
-        List<User> result = null;
-        try {
-            result = userDAO.getAll();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public List<Promotion> getAllUser() {
+        List<Promotion> result = null;
+        result = promotionDAO.getAllPromotions();
         return result;
     }
 	
     @Override
     public boolean addPromotion(Promotion promotion) {
-        return false;
+        return promotionDAO.addPromotion(promotion);
     }
 
     @Override
     public boolean deletePromotion(String id) {
-        return false;
+        return promotionDAO.deletePromotion(id);
     }
 
     @Override
-    public boolean updatePromotion(String id) {
-        return false;
+    public boolean updatePromotion(Promotion promotion) {
+        return promotionDAO.updatePromotion(promotion);
     }
 
     @Override
-    public Promotion showPromotion() {
-        return null;
+    public Promotion showPromotion(String id) {
+        return promotionDAO.findPromotionById(id);
     }
 }
