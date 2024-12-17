@@ -8,7 +8,7 @@ public class ProductionDAO {
 
 	private final String URL = "jdbc:mysql://localhost:3306/phone_shop?autoReconnect=true&useSSL=false";
 	private final String USER = "root";
-	private final String PASSWORD = "ngochuyen0527";
+	private final String PASSWORD = "Wh0@m1?!";
 
 	PreparedStatement ps;
 	Statement st;
