@@ -14,7 +14,7 @@ public class PromotionManagementImpl implements PromotionManagement {
         promotionDAO = new PromotionDAO(); // Khởi tạo đối tượng PromotionDAO
     }
 
-    public List<Promotion> getAllUser() {
+    public List<Promotion> getAllPromotions() {
         List<Promotion> result = null;
         result = promotionDAO.getAllPromotions();
         return result;

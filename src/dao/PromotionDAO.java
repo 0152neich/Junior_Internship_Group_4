@@ -20,7 +20,7 @@ public class PromotionDAO {
 
             while (resultSet.next()) {
                 promotions.add(new Promotion(
-                        resultSet.getString("idofpromotion"),
+                        resultSet.getString("id"),
                         resultSet.getDate("start"),
                         resultSet.getDate("end"),
                         resultSet.getString("dieukien"),
@@ -34,7 +34,7 @@ public class PromotionDAO {
     }
 
     public boolean addPromotion(Promotion promotion) {
-        String sql = "INSERT INTO KHUYEN_MAI (idofpromotion, start, end, dieukien, description) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO KHUYEN_MAI (id, start, end, dieukien, description) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
@@ -52,7 +52,7 @@ public class PromotionDAO {
     }
 
     public boolean updatePromotion(Promotion promotion) {
-        String sql = "UPDATE KHUYENMAI SET start = ?, end = ?, dieukien = ?, description = ? WHERE idofpromotion = ?";
+        String sql = "UPDATE KHUYEN_MAI SET start = ?, end = ?, dieukien = ?, description = ? WHERE id = ?";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
@@ -70,7 +70,7 @@ public class PromotionDAO {
     }
 
     public boolean deletePromotion(String promotionId) {
-        String sql = "DELETE FROM KHUYENMAI WHERE idofpromotion = ?";
+        String sql = "DELETE FROM KHUYEN_MAI WHERE id = ?";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
@@ -83,7 +83,7 @@ public class PromotionDAO {
     }
 
     public Promotion findPromotionById(String promotionId) {
-        String sql = "SELECT * FROM KHUYENMAI WHERE idofpromotion = ?";
+        String sql = "SELECT * FROM KHUYENMAI WHERE id = ?";
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
@@ -91,7 +91,7 @@ public class PromotionDAO {
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new Promotion(
-                            resultSet.getString("idofpromotion"),
+                            resultSet.getString("id"),
                             resultSet.getDate("start"),
                             resultSet.getDate("end"),
                             resultSet.getString("dieukien"),
